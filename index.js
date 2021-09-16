@@ -1,11 +1,12 @@
 /**
  * Entry point. It serves the data, and reinstalls the code.
  */
+require('dotenv').config()
+
 const express = require('express')
 
-
 const app = express()
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 app.use(express.static('public'))
 
