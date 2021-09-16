@@ -8,6 +8,7 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 4000;
 
+app.use(cors()); // <---- use cors middleware
 app.use(express.static('public'))
 
 app.get('/', (_req, res) => {
