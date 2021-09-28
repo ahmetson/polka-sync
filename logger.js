@@ -52,7 +52,7 @@ const logSync = async (dataName, arr, web3, duration) => {
     }
     else if (event['event'] == 'GrantTokensClaimed') {
       let recipient = event.returnValues.recipient.toLowerCase();
-      let amount    = web3.utils.fromWei(event.returnValues.amount, 'ether');
+      let amount    = web3.utils.fromWei(event.returnValues.amountClaimed.toString(), 'ether');
 
       if (data[recipient]) {
         data[recipient].claimed = parseFloat(data[recipient].claimed) + parseFloat(amount);
